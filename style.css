@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  /* margin: 0;
+  padding: 50px;
+  background-color: blueviolet;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100vh; */
+}
+
+header.header{
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+background-color: cadetblue;
+/* background-image: url('../img/bg.jpg'); */
+background-size: cover;
+background-position: center;
+
+
+}
+header .header-overlay{
+position: absolute;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(15, 75, 42, 0.295)
+
+}
+.nav-container{
+  margin-left: auto;
+margin-right: auto;
+max-width: 1300px;
+padding-top: 20px;
+padding-left: 50px;
+padding-right: 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo{
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+}
+/* navigation block */
+.nav-wrapper{
+
+}
+
+/* navigation desctop */
+
+.nav__block{
+list-style-type: none;
+margin: 0;
+display: flex;
+
+}
+/* for small screen */
+@media (max-width: 1200px) {
+  .nav__block{
+    display: none;
+  }
+}
+
+
+
+.nav__item{
+  margin-right: 50px;
+}
+.nav__item:last-child{
+  margin-right: 0px;
+}
+.nav__link{
+font-size: 22px;
+font-weight: 600;
+color: white;
+text-decoration: none;
+
+
+}
+.nav__link:hover{
+  color: yellow;
+}
+
+/* for menu transform icon burger sign */
+.menu-icon{
+  /* background-color: red; */
+  height: 30px;
+  width: 30px;
+  display: none;
+  z-index: 19;
+  position: relative;
+  cursor: pointer;
+}
+
+/* for small screen */
+@media (max-width: 1200px) {
+  .menu-icon{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+}
+
+.menu-icon-line{
+  width: 30px;
+  height: 5px;
+  background-color: #ffffff;
+  position: relative;
+}
+.menu-icon-line::before{
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+display: block;
+width: 30px;
+height: 5px;
+background-color: #ffffff;
+transition: transform  0.2s ease-in, top 0.2s linear 0.2s;
+}
+.menu-icon-line::after{
+  position: absolute;
+  left: 0;
+  top: 10px;
+  content: '';
+display: block;
+width: 30px;
+height: 5px;
+background-color: #ffffff;
+transition: transform  0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line{
+  background-color: transparent;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line::before{
+  transform: rotate(45deg);
+  top:0;
+  transition: top 0.2s linear, transform  0.2s ease-in 0.2s;
+}
+.menu-icon.menu-icon-active .menu-icon-line::after{
+  transform: rotate(-45deg);
+  top:0;
+  transition: top 0.2s linear, transform  0.2s ease-in 0.2s;
+}
+/* end button burger */
+
+/* navigation mobile */
+/* mobile menu */
+.mobile-nav {
+  z-index: 9;
+  display: block;
+  position: absolute;
+  right: -350px;
+  top: 0;
+  height: 100%;
+width: 350px;
+background-color: rgba(10, 116, 75, 0.301);
+padding: 50px;
+transition: transform 0.4s ease-in;
+}
+.mobile-nav__title {
+  color: yellow;
+  font-size: 28px;
+font-weight: 800;
+margin-bottom: 30px;
+}
+.mobile-nav__list{
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.mobile-nav__item {
+margin-bottom: 30px;
+}
+.mobile-nav__link{
+color: white;
+}
+.mobile-nav__link:hover{
+color: yellow;
+text-decoration: none;
+font-size: 22px;
+font-weight: 600;
+}
+
+.mobile-nav__active{
+  transform: translateX(-100%);
+}
+
+/* for small screen 320 iphone5 */
+@media (max-width: 768px) {
+  .nav-container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .mobile-nav {
+    width: 320px;
+    right: -320px;
+  }
+}
+
